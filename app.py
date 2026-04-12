@@ -6,15 +6,18 @@ import os
 #use of resources using flask=RESTFUL instead of @app.route
 #Class based resources -
 #initialise Flask
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "dev-secret-key"
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///instance/production.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+    f"sqlite:///{os.path.join(BASE_DIR, 'instance', 'production.db')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SESSION_COOKIE_SECURE'] = False  
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 
 #initialise extensions
-db.init__app(app)
+db.init_app(app)
 bcrypt.init_app(app)
 migrate = Migrate(app, db)
 api = Api(app)
