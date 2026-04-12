@@ -39,8 +39,8 @@ class JournalEntry(db.Model):
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
     mood = db.Column(db.String)
-    created_at = db.Column(db.Datetime, default=datetime.now)
-    updated_at = db.Column(db.Datetime, default=datetime.now, onupdate = datetime.now)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate = datetime.now)
     
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     
