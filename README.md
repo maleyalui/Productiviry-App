@@ -64,7 +64,7 @@ python seed.py
 
 ---
 
-## ▶️ Run Instructions
+##  Run Instructions
 
 Start the development server:
 
@@ -194,18 +194,9 @@ python_version = "3.12"
 
 ---
 
-##  Test Files
-
-Currently, no automated tests are implemented.
-
-### Suggested Improvements:
+## Future Improvements:
 
 * Use `pytest` for unit and integration testing
-* Add tests for:
-
-  * Authentication (signup/login)
-  * Journal CRUD operations
-  * Authorization checks
 
 ---
 
